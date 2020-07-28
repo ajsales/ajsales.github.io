@@ -53,16 +53,18 @@ $(document).ready(function(){
 	});
 
 	$('.contact a').on('mouseenter', function() {
-		$(this).find('svg').animate({
-			height: '3em',
-			width: '3em',
-			opacity: '0.5'
-		})
+		$(this).find('svg').css({
+			fill: '#343c65'
+		});
+		$(this).find('svg').find('g').css({
+			fill: '#343c65'
+		});
 	}).on('mouseleave', function() {
-		$(this).find('svg').animate({
-			height: '2em',
-			width: '2em',
-			opacity: '1'
+		$(this).find('svg').css({
+			fill: '#fff'
+		});
+		$(this).find('svg').find('g').css({
+			fill: '#fff'
 		});
 	});
 

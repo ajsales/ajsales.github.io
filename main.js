@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 	$('.jumbotron h1').animate({
 		opacity: '1',
-	}, function() {
+	}, 800, function() {
 		$('.jumbotron p').slideDown(800);
 	});
 

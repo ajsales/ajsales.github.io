@@ -185,3 +185,18 @@ section > .container {
 h4 {
 	color: #fff;
 }
+
+.footer p {
+	color: #fff;
+	margin: 0;
+}
+
+.footer .row:last-of-type {
+	margin: 5px 0 0 0;
+}
+
+.footer hr {
+	margin-top: 5px;
+	margin: auto;
+	width: 25%;
+}

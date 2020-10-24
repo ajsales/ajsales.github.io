@@ -142,6 +142,11 @@ section > .container {
 	object-fit: cover;
 }
 
+#food_map {
+	object-fit: cover;
+	object-position: 100% 0;
+}
+
 .title {
 	font-style: italic;
 	margin: 0;

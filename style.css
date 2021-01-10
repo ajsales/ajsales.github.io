@@ -138,7 +138,8 @@ section > .container {
 }
 
 #plentina, #berkeley,
-#soundspace, #ghostquest {
+#soundspace, #ghostquest,
+#spotify {
 	object-fit: cover;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import BackgroundImage from './BackgroundImage';
 
@@ -7,7 +7,7 @@ export default function ImageMap() {
 	const [ imgSize, setImgSize ] = useState(0);
 
 	const onSize = (size) => {
-		setImgSize(size.width);
+		setImgSize(size);
 	}
 
 	const areaData = [
@@ -23,32 +23,42 @@ export default function ImageMap() {
 		}
 	];
 
-	const areas = areaData.map(area => {
-
-		// 400px is original width of image
-		let resizedCoords = area.coords.map(coord => coord * imgSize / 400);
-		return (
-			<area
-				title={area.name}
-				alt={area.name}
-				shape={area.shape}
-				href=""
-				coords={resizedCoords.join()}
-				key={area.name}
-			/>
-		);
-	});
-
-	console.log(imgSize);
+	const areas = areaData.map(area => <Area {...area} imgSize={imgSize} />);
 	
 	return (
-		<div>
-			<div class="bg">
-				<BackgroundImage onSize={onSize} />
-			</div>
+		<div className="ImageMap">
+			<BackgroundImage onSize={onSize} />
 			<map name="image-map">
 				{areas}
 			</map>
+		</div>
+	);
+}
+
+function Area(props) {
+
+	const canvasRef = useRef(null);
+	const { name, shape, coords, imgSize } = props;
+
+	useEffect(() => {
+		canvasRef.current.width = imgSize.width;
+		canvasRef.current.height = imgSize.height;
+	}, [imgSize])
+
+	// Original image size is 400px
+	let resizedCoords = coords.map(coord => coord * imgSize.width / 400);
+
+	return (
+		<div className="Area">
+			<area
+				title={name}
+				alt={name}
+				shape={shape}
+				href=""
+				coords={resizedCoords.join()}
+				key={name}
+			/>
+			<canvas ref={node => canvasRef.current = node} />
 		</div>
 	);
 }

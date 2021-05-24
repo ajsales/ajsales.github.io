@@ -7,7 +7,7 @@ import backgroundImg from '../images/background.gif';
 function BackgroundImage() {
 	return (
 		<img
-			className="image-map"
+			className="BackgroundImage"
 			src={backgroundImg}
 			alt="Person sleeping at desk"
 			useMap="#image-map" 

@@ -1,14 +1,14 @@
 import React from 'react';
 
 import ImageMap from './ImageMap';
-import BottomPanel from './BottomPanel';
+import SidePanel from './SidePanel';
 
 export default function App() {
 
 	return (
 		<div className="window">
 			<ImageMap />
-			<BottomPanel />
+			<SidePanel />
 		</div>
 	);
 }

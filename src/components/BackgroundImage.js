@@ -15,4 +15,4 @@ function BackgroundImage() {
 	);
 }
 
-export default withSize()(BackgroundImage);
+export default withSize({ monitorHeight: true })(BackgroundImage);

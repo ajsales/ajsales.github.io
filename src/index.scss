@@ -18,6 +18,8 @@ body {
 		height: 100%;
 		overflow: hidden;
 
+		position: relative;
+
 		.BackgroundImage {
 			display: block;
 			height: 100%;
@@ -25,19 +27,17 @@ body {
 
 		}
 
-		.Area {
-			canvas {
-				position: absolute;
-				top: 0;
-				left: 0;
+		canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
 
-				pointer-events: none;
-				z-index: 2;
-			}
+			pointer-events: none;
+			z-index: 2;
 		}
 	}
 
-	.BottomPanel {
+	.SidePanel {
 		grid-area: bottom-panel;
 	}
 }
